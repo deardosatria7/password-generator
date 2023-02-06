@@ -24,7 +24,7 @@ export default function Home() {
           <div className="text-2xl font p-10 font-bold">Password Generator</div>
           <div>
             <form>
-              <div className="flex flex-col justify-center">
+              <div className="grid grid-cols-1 gap-5">
                 <div className="flex justify-center gap-5">
                   <label htmlFor="length">Password Length:</label>
                   <input className="rounded-md" type="number" id="length" min="8" max="64" value="16" />
