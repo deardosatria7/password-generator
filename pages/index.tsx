@@ -21,38 +21,69 @@ export default function Home() {
       </Head>
       <section className="min-h-screen">
         <div className="min-h-screen flex flex-col justify-center text-center">
-          <div className="text-2xl font p-10 font-bold">Password Generator</div>
+          <div className="text-2xl sm:text-3xl font p-10 font-bold">
+            Password Generator
+          </div>
           <div>
             <form>
-              <div className="grid grid-cols-1 gap-5">
-                <div className="flex justify-center gap-5">
-                  <label htmlFor="length">Password Length:</label>
-                  <input className="rounded-md" type="number" id="length" min="8" max="64" value="16" />
+              <div className="grid grid-cols-2 gap-4 text-sm sm:text-base">
+                <div className="flex justify-end">
+                  <label htmlFor="length">Password Length</label>
                 </div>
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-start">
+                  <input
+                    className="rounded-md"
+                    type="number"
+                    id="length"
+                    min="8"
+                    max="64"
+                    value="16"
+                  />
+                </div>
+                <div className="flex justify-end text-sm sm:text-base">
                   <label htmlFor="uppercase">Include Uppercase Letters</label>
+                </div>
+                <div className="flex justify-start">
                   <input type="checkbox" id="uppercase" />
                 </div>
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-end text-sm sm:text-base">
                   <label htmlFor="lowercase">Include Lowercase Letters</label>
+                </div>
+                <div className="flex justify-start">
                   <input type="checkbox" id="lowercase" checked />
                 </div>
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-end text-sm sm:text-base">
                   <label htmlFor="numbers">Include Numbers</label>
+                </div>
+                <div className="flex justify-start">
                   <input type="checkbox" id="numbers" />
                 </div>
-                <div className="flex justify-center gap-5">
+
+                <div className="flex justify-end text-sm sm:text-base">
                   <label htmlFor="symbols">Include Symbols</label>
+                </div>
+                <div className="flex justify-start">
                   <input type="checkbox" id="symbols" />
                 </div>
-                <button className="py-8" type="button" onClick={generatePassword}>
-                  Generate Password
-                </button>
-                <textarea id="password" className="max-w-xs mx-auto bg-zinc-700 rounded-lg" readOnly></textarea>
+                <div className="flex flex-col justify-center col-span-2">
+                  <button
+                    className="mt-6 py-2 bg-neutral-600 rounded-md mx-auto px-3 hover:bg-neutral-500"
+                    type="button"
+                    onClick={generatePassword}
+                  >
+                    Generate Password
+                  </button>
+                  <textarea
+                    id="password"
+                    className="mt-3 mx-6 sm:mx-44 bg-zinc-700 rounded-lg"
+                    readOnly
+                  ></textarea>
+                </div>
               </div>
             </form>
             <div className="text-gray-400 p-10">
-              Have you ever wondered "<i>Is my password strong enough?</i>". Well, here you can generate one.
+              Have you ever wondered "<i>Is my password strong enough?</i>".
+              Well, here you can generate one.
             </div>
           </div>
         </div>
