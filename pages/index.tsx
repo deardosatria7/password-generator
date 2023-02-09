@@ -128,8 +128,8 @@ export default function Home() {
               </div>
             </form>
             <div className="text-gray-400 p-10">
-              Have you ever wondered "<i>Is my password strong enough?</i>".
-              Well, here you can generate one.
+              Have you ever wondered &ldquo;<i>Is my password strong enough?</i>{" "}
+              &rdquo;. Well, here you can generate one.
             </div>
           </div>
         </div>
