@@ -17,8 +17,8 @@ function generatePassword() {
   const includeUppercase = (
     document.getElementById("uppercase") as HTMLInputElement
   ).checked;
-  const includeNumbers = (
-    document.getElementById("numbers") as HTMLInputElement
+  const includeLowercase = (
+    document.getElementById("lowercase") as HTMLInputElement
   ).checked;
   const includeSymbols = (
     document.getElementById("symbols") as HTMLInputElement
@@ -26,12 +26,12 @@ function generatePassword() {
 
   //make an empty string to be appended later
   let password = "";
-  //by default password contains only lowercase letters
-  let characterSet = lowercaseLetters;
+  //by default password contains only numbers
+  let characterSet = numbers;
 
   //check numbers condition
-  if (includeNumbers) {
-    characterSet += numbers;
+  if (includeLowercase) {
+    characterSet += lowercaseLetters;
   }
 
   //check uppercase letters condition
@@ -97,12 +97,11 @@ export default function Home() {
                 <div className="flex justify-start">
                   <input type="checkbox" id="uppercase" className="w-4 h-4" />
                 </div>
-
                 <div className="flex justify-end text-sm sm:text-base">
-                  <label htmlFor="numbers">Include Numbers</label>
+                  <label htmlFor="lowercase">Include Lowercase Letters</label>
                 </div>
                 <div className="flex justify-start">
-                  <input type="checkbox" id="numbers" className="w-4 h-4" />
+                  <input type="checkbox" id="lowercase" className="w-4 h-4" />
                 </div>
 
                 <div className="flex justify-end text-sm sm:text-base">
@@ -128,8 +127,7 @@ export default function Home() {
               </div>
             </form>
             <div className="text-gray-400 p-10">
-              Have you ever wondered &ldquo;<i>Is my password strong enough?</i>{" "}
-              &rdquo;. Well, here you can generate one.
+              <i>Showing only numbers for default</i>
             </div>
           </div>
         </div>
