@@ -1,3 +1,5 @@
+## Password Generator
+
 Make your own strong password using random generated strings
 
 Customisable to yoour needs
