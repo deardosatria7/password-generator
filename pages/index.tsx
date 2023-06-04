@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import {Inter} from "@next/font/google";
 
 const inter = Inter({subsets: ["latin"]});
@@ -6,7 +7,7 @@ const inter = Inter({subsets: ["latin"]});
 //define source letters
 const lowercaseLetters = "qwertyuiopasdfghjklzxcvbnm";
 const uppercaseLetters = "QWERTYUIOPASDFGHJKLZXCVBNM";
-const symbols = "!@#$%^&*()_+-={}|[]:'.,?><|";
+const symbols = "!@#$%^&*()_+-={}|[]:'.,?><|/";
 const numbers = "0123456789";
 
 //add a function to generate password
@@ -92,13 +93,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex justify-end text-sm sm:text-base">
-                  <label htmlFor="uppercase">Include Uppercase Letters</label>
+                  <label htmlFor="uppercase">Uppercase Letters</label>
                 </div>
                 <div className="flex justify-start">
                   <input type="checkbox" id="uppercase" className="w-4 h-4" />
                 </div>
                 <div className="flex justify-end text-sm sm:text-base">
-                  <label htmlFor="lowercase">Include Lowercase Letters</label>
+                  <label htmlFor="lowercase">Lowercase Letters</label>
                 </div>
                 <div className="flex justify-start">
                   <input type="checkbox" id="lowercase" className="w-4 h-4" />
@@ -118,11 +119,30 @@ export default function Home() {
                   >
                     Generate Password
                   </button>
-                  <textarea
-                    id="generated-password"
-                    className="text-center mt-5 mx-6 sm:mx-44 bg-zinc-700 rounded-lg"
-                    readOnly
-                  ></textarea>
+                  <div className="flex justify-center mt-5 mx-6 sm:mx-44 gap-4">
+                    <textarea
+                      id="generated-password"
+                      className="text-center bg-zinc-700 rounded-lg w-auto"
+                      readOnly
+                    ></textarea>
+                    <Link href={"/"} legacyBehavior>
+                      <a
+                        href="/"
+                        className="flex bg-neutral-600 hover:bg-neutral-500 rounded-md px-3 items-center"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            (
+                              document.getElementById(
+                                "generated-password"
+                              ) as HTMLInputElement
+                            ).value
+                          );
+                        }}
+                      >
+                        Copy
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </form>
