@@ -125,22 +125,20 @@ export default function Home() {
                       className="text-center bg-zinc-700 rounded-lg w-auto"
                       readOnly
                     ></textarea>
-                    <Link href={"/"} legacyBehavior>
-                      <a
-                        href="/"
-                        className="flex bg-neutral-600 hover:bg-neutral-500 rounded-md px-3 items-center"
-                        onClick={() => {
-                          navigator.clipboard.writeText(
-                            (
-                              document.getElementById(
-                                "generated-password"
-                              ) as HTMLInputElement
-                            ).value
-                          );
-                        }}
-                      >
-                        Copy
-                      </a>
+                    <Link
+                      href={"/"}
+                      className="flex bg-neutral-600 hover:bg-neutral-500 rounded-md px-3 items-center"
+                      onClick={() => {
+                        navigator.clipboard.writeText(
+                          (
+                            document.getElementById(
+                              "generated-password"
+                            ) as HTMLInputElement
+                          ).value
+                        );
+                      }}
+                    >
+                      Copy
                     </Link>
                   </div>
                 </div>
