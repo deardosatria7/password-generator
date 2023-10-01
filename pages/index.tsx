@@ -80,18 +80,6 @@ export default function Home() {
           <div>
             <form>
               <div className="grid grid-cols-2 gap-4 text-sm sm:text-base">
-                <div className="flex justify-end">
-                  <label htmlFor="length">Password Length</label>
-                </div>
-                <div className="flex justify-start">
-                  <input
-                    className="rounded-sm text-black"
-                    type="number"
-                    id="length"
-                    min="8"
-                    max="64"
-                  />
-                </div>
                 <div className="flex justify-end text-sm sm:text-base">
                   <label htmlFor="uppercase">Uppercase Letters</label>
                 </div>
@@ -110,6 +98,18 @@ export default function Home() {
                 </div>
                 <div className="flex justify-start">
                   <input type="checkbox" id="symbols" className="w-4 h-4" />
+                </div>
+                <div className="flex justify-end">
+                  <label htmlFor="length">Password Length</label>
+                </div>
+                <div className="flex justify-start">
+                  <input
+                    className="rounded-sm text-black"
+                    type="number"
+                    id="length"
+                    min="8"
+                    max="64"
+                  />
                 </div>
                 <div className="flex flex-col justify-center col-span-2">
                   <button
